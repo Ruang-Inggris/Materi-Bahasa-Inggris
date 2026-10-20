@@ -3,42 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ruang Inggris</title>
+    <title>Ruang Inggris - Fantasy Learning</title>
     <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-slate-50 font-sans text-slate-800">
+    <!-- Memanggil font bergaya kartun/fantasi agar cocok dengan gambar -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&family=Fredoka+One&display=swap" rel="stylesheet">
     
-    <!-- Header dengan gradien warna ungu ke merah muda -->
-    <header class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white p-10 text-center shadow-lg rounded-b-3xl mb-8">
-        <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight mb-2">Ruang Inggris</h1>
-        <p class="text-purple-100 font-medium text-lg">Temukan Materi Bahasa Inggris Seru di sini!</p>
-    </header>
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+            /* Memanggil gambar background.jpg yang sudah Mbak unggah */
+            background-image: url('background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
 
-    <main class="max-w-4xl mx-auto p-4">
-        <h2 class="text-2xl font-bold mb-6 text-slate-700 border-b-4 border-purple-200 pb-2 inline-block">Pilih Materi Pembelajaran</h2>
+        /* Overlay gelap transparan agar tombol lebih terbaca dari gambar */
+        .overlay {
+            background: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(2px);
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem 1rem;
+        }
+
+        /* Font khusus untuk judul */
+        .font-fantasy {
+            font-family: 'Fredoka One', cursive;
+        }
+
+        /* Efek melayang perlahan untuk judul */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .floating-element {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* Gaya tombol seperti papan kayu / kaca ajaib */
+        .magic-btn {
+            background: rgba(255, 255, 255, 0.85);
+            border: 4px solid #8B4513; /* Warna pinggiran kayu */
+            box-shadow: 0 8px 15px rgba(0,0,0,0.3), inset 0 -4px 0 rgba(139, 69, 19, 0.2);
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
         
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <!-- Kartu Materi -->
-            <div class="bg-white p-6 rounded-2xl shadow-sm border-t-4 border-indigo-400 hover:shadow-xl hover:-translate-y-1 transition duration-300">
-                <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mb-4">
-                    <svg class="w-6 h-6 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
-                </div>
-                <h3 class="text-xl font-bold text-slate-800">Descriptive & Report Text</h3>
-                <p class="text-slate-600 mt-2">Modul materi, contoh teks, dan panduan penyusunan kalimat.</p>
-                <a href="#" class="mt-5 inline-flex items-center text-indigo-600 font-semibold hover:text-indigo-800">Buka Materi <span class="ml-1">&rarr;</span></a>
+        .magic-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 25px rgba(0,0,0,0.4), inset 0 -4px 0 rgba(139, 69, 19, 0.2);
+            background: rgba(255, 255, 255, 0.95);
+            border-color: #A0522D;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="overlay">
+        
+        <!-- Header Ajaib -->
+        <header class="text-center mb-10 mt-4 floating-element z-10">
+            <!-- Papan Kayu Judul -->
+            <div class="bg-yellow-100 border-4 border-yellow-700 p-4 rounded-3xl inline-block shadow-2xl relative" style="box-shadow: 0 10px 0px #8b4513;">
+                <h1 class="text-5xl md:text-6xl font-fantasy text-yellow-800 drop-shadow-md tracking-wide">
+                    <span class="text-white" style="-webkit-text-stroke: 2px #8b4513;">Ruang</span> Inggris
+                </h1>
+                <p class="font-bold text-yellow-900 mt-2 text-lg md:text-xl">Temukan semua materi bahasa Inggris seru di sini!</p>
+                
+                <!-- Bintang hiasan -->
+                <div class="absolute -top-4 -left-4 text-3xl">✨</div>
+                <div class="absolute -bottom-4 -right-4 text-3xl">🌟</div>
+            </div>
+        </header>
+
+        <!-- Area Menu Petualangan -->
+        <main class="w-full max-w-5xl z-10">
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 px-2">
+                
+                <a href="#" class="magic-btn p-4 flex flex-col items-center justify-center text-center group cursor-pointer">
+                    <span class="text-4xl mb-2 group-hover:animate-bounce">📖</span>
+                    <h2 class="text-xl md:text-2xl font-fantasy text-orange-600">Grammar</h2>
+                    <p class="text-xs md:text-sm text-gray-700 font-bold mt-1">Tata Bahasa</p>
+                </a>
+
+                <a href="#" class="magic-btn p-4 flex flex-col items-center justify-center text-center group cursor-pointer">
+                    <span class="text-4xl mb-2 group-hover:animate-bounce">🌱</span>
+                    <h2 class="text-xl md:text-2xl font-fantasy text-green-600">Vocabulary</h2>
+                    <p class="text-xs md:text-sm text-gray-700 font-bold mt-1">Kosakata Baru</p>
+                </a>
+
+                <a href="#" class="magic-btn p-4 flex flex-col items-center justify-center text-center group cursor-pointer">
+                    <span class="text-4xl mb-2 group-hover:animate-bounce">💬</span>
+                    <h2 class="text-xl md:text-2xl font-fantasy text-purple-600">Speaking</h2>
+                    <p class="text-xs md:text-sm text-gray-700 font-bold mt-1">Latihan Bicara</p>
+                </a>
+
+                <a href="#" class="magic-btn p-4 flex flex-col items-center justify-center text-center group cursor-pointer">
+                    <span class="text-4xl mb-2 group-hover:animate-bounce">🎧</span>
+                    <h2 class="text-xl md:text-2xl font-fantasy text-yellow-600">Listening</h2>
+                    <p class="text-xs md:text-sm text-gray-700 font-bold mt-1">Mendengarkan</p>
+                </a>
+
+                <a href="#" class="magic-btn p-4 flex flex-col items-center justify-center text-center group cursor-pointer">
+                    <span class="text-4xl mb-2 group-hover:animate-bounce">🔍</span>
+                    <h2 class="text-xl md:text-2xl font-fantasy text-blue-600">Reading</h2>
+                    <p class="text-xs md:text-sm text-gray-700 font-bold mt-1">Membaca Teks</p>
+                </a>
+
+                <a href="#" class="magic-btn p-4 flex flex-col items-center justify-center text-center group cursor-pointer">
+                    <span class="text-4xl mb-2 group-hover:animate-bounce">✍️</span>
+                    <h2 class="text-xl md:text-2xl font-fantasy text-red-600">Writing</h2>
+                    <p class="text-xs md:text-sm text-gray-700 font-bold mt-1">Menulis Cerita</p>
+                </a>
             </div>
 
-            <!-- Kartu Kuis -->
-            <div class="bg-white p-6 rounded-2xl shadow-sm border-t-4 border-pink-400 hover:shadow-xl hover:-translate-y-1 transition duration-300">
-                <div class="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center mb-4">
-                    <svg class="w-6 h-6 text-pink-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                </div>
-                <h3 class="text-xl font-bold text-slate-800">Kuis Interaktif & Games</h3>
-                <p class="text-slate-600 mt-2">Latihan soal pemahaman bacaan dan game menjodohkan kosa kata.</p>
-                <a href="#" class="mt-5 inline-flex items-center text-pink-600 font-semibold hover:text-pink-800">Mulai Kuis <span class="ml-1">&rarr;</span></a>
+            <!-- Menu Buku Latihan (Bawah) -->
+            <div class="mt-8 flex flex-col md:flex-row justify-center gap-4 px-2">
+                <a href="#" class="magic-btn bg-pink-50 p-4 px-8 flex items-center justify-center gap-3 cursor-pointer">
+                    <span class="text-3xl">📚</span>
+                    <div>
+                        <h3 class="font-fantasy text-lg text-pink-700">Small Steps, Big Progress</h3>
+                        <p class="text-sm text-gray-700 font-bold">Kumpulan Latihan Soal</p>
+                    </div>
+                </a>
+
+                <a href="#" class="magic-btn bg-blue-50 p-4 px-8 flex items-center justify-center gap-3 cursor-pointer">
+                    <span class="text-3xl">🎮</span>
+                    <div>
+                        <h3 class="font-fantasy text-lg text-blue-700">Practice Makes Magic</h3>
+                        <p class="text-sm text-gray-700 font-bold">Kuis & Game Interaktif</p>
+                    </div>
+                </a>
             </div>
-        </div>
-    </main>
-    
+
+        </main>
+        
+        <!-- Footer Info -->
+        <footer class="mt-auto pt-10 pb-4 text-center z-10">
+            <div class="bg-black bg-opacity-50 text-white px-6 py-2 rounded-full inline-block backdrop-blur-sm">
+                <p class="text-sm font-bold text-yellow-300">A Brighter You! ❤️ Disusun oleh: Peni Sulistiyanti, S.Pd., M.Pd.</p>
+            </div>
+        </footer>
+
+    </div>
+
 </body>
 </html>
