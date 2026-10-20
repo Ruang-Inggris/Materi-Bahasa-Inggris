@@ -5,159 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ruang Inggris - Fantasy Learning</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Memanggil font bergaya kartun/fantasi agar cocok dengan gambar -->
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&family=Fredoka+One&display=swap" rel="stylesheet">
-    
     <style>
-        body {
-            font-family: 'Nunito', sans-serif;
-            /* Memanggil gambar background.jpg yang sudah Mbak unggah */
-            background-image: url('background.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            background-repeat: no-repeat;
-            margin: 0;
-            padding: 0;
-            min-height: 100vh;
+        /* Efek animasi untuk tombol agar memantul saat disentuh */
+        .game-btn {
+            transition: transform 0.2s, box-shadow 0.2s;
         }
-
-        /* Overlay gelap transparan agar tombol lebih terbaca dari gambar */
-        .overlay {
-            background: rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(2px);
-            min-height: 100vh;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 2rem 1rem;
-        }
-
-        /* Font khusus untuk judul */
-        .font-fantasy {
-            font-family: 'Fredoka One', cursive;
-        }
-
-        /* Efek melayang perlahan untuk judul */
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
-        }
-        .floating-element {
-            animation: float 3s ease-in-out infinite;
-        }
-
-        /* Gaya tombol seperti papan kayu / kaca ajaib */
-        .magic-btn {
-            background: rgba(255, 255, 255, 0.85);
-            border: 4px solid #8B4513; /* Warna pinggiran kayu */
-            box-shadow: 0 8px 15px rgba(0,0,0,0.3), inset 0 -4px 0 rgba(139, 69, 19, 0.2);
-            border-radius: 20px;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .magic-btn:hover {
+        .game-btn:hover {
             transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 15px 25px rgba(0,0,0,0.4), inset 0 -4px 0 rgba(139, 69, 19, 0.2);
-            background: rgba(255, 255, 255, 0.95);
-            border-color: #A0522D;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
         }
     </style>
 </head>
-<body>
 
-    <div class="overlay">
+<!-- Bagian ini sudah dikembalikan memanggil nama file background.jpg -->
+<body class="font-sans text-slate-800 min-h-screen" style="background-image: url('background.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
+    
+    <!-- Lapisan transparan gelap (overlay) agar tombol dan teks tetap terbaca -->
+    <div class="min-h-screen bg-black bg-opacity-30 py-10 px-4">
         
-        <!-- Header Ajaib -->
-        <header class="text-center mb-10 mt-4 floating-element z-10">
-            <!-- Papan Kayu Judul -->
-            <div class="bg-yellow-100 border-4 border-yellow-700 p-4 rounded-3xl inline-block shadow-2xl relative" style="box-shadow: 0 10px 0px #8b4513;">
-                <h1 class="text-5xl md:text-6xl font-fantasy text-yellow-800 drop-shadow-md tracking-wide">
-                    <span class="text-white" style="-webkit-text-stroke: 2px #8b4513;">Ruang</span> Inggris
-                </h1>
-                <p class="font-bold text-yellow-900 mt-2 text-lg md:text-xl">Temukan semua materi bahasa Inggris seru di sini!</p>
-                
-                <!-- Bintang hiasan -->
-                <div class="absolute -top-4 -left-4 text-3xl">✨</div>
-                <div class="absolute -bottom-4 -right-4 text-3xl">🌟</div>
-            </div>
-        </header>
-
-        <!-- Area Menu Petualangan -->
-        <main class="w-full max-w-5xl z-10">
+        <div class="max-w-5xl mx-auto">
             
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 px-2">
+            <!-- Papan Judul Utama (Gaya Papan Kayu) -->
+            <div class="bg-[#FFF8D6] border-[6px] border-[#B67332] rounded-3xl p-6 text-center shadow-2xl mb-12 relative max-w-2xl mx-auto transform rotate-1 hover:rotate-0 transition">
+                <div class="absolute -top-6 -left-4 text-4xl">✨</div>
+                <div class="absolute -bottom-4 -right-4 text-4xl">🌟</div>
+                <h1 class="text-4xl md:text-6xl font-extrabold text-[#7A4B22] drop-shadow-md mb-2 tracking-wide" style="font-family: 'Comic Sans MS', cursive, sans-serif;">Ruang Inggris</h1>
+                <p class="text-[#966029] font-bold text-lg md:text-xl">Temukan semua materi bahasa Inggris seru di sini!</p>
+            </div>
+
+            <!-- Grid Menu Materi (Gaya Tombol Game) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                 
-                <a href="#" class="magic-btn p-4 flex flex-col items-center justify-center text-center group cursor-pointer">
-                    <span class="text-4xl mb-2 group-hover:animate-bounce">📖</span>
-                    <h2 class="text-xl md:text-2xl font-fantasy text-orange-600">Grammar</h2>
-                    <p class="text-xs md:text-sm text-gray-700 font-bold mt-1">Tata Bahasa</p>
+                <a href="#" class="game-btn bg-white bg-opacity-95 border-b-[8px] border-[#8c5930] rounded-3xl p-6 text-center cursor-pointer block">
+                    <div class="text-4xl mb-3">📖</div>
+                    <h3 class="text-2xl font-bold text-orange-600 mb-1">Grammar</h3>
+                    <p class="text-gray-500 text-sm font-semibold">Tata Bahasa</p>
                 </a>
 
-                <a href="#" class="magic-btn p-4 flex flex-col items-center justify-center text-center group cursor-pointer">
-                    <span class="text-4xl mb-2 group-hover:animate-bounce">🌱</span>
-                    <h2 class="text-xl md:text-2xl font-fantasy text-green-600">Vocabulary</h2>
-                    <p class="text-xs md:text-sm text-gray-700 font-bold mt-1">Kosakata Baru</p>
+                <a href="#" class="game-btn bg-white bg-opacity-95 border-b-[8px] border-[#8c5930] rounded-3xl p-6 text-center cursor-pointer block">
+                    <div class="text-4xl mb-3">🌱</div>
+                    <h3 class="text-2xl font-bold text-green-600 mb-1">Vocabulary</h3>
+                    <p class="text-gray-500 text-sm font-semibold">Kosakata Baru</p>
                 </a>
 
-                <a href="#" class="magic-btn p-4 flex flex-col items-center justify-center text-center group cursor-pointer">
-                    <span class="text-4xl mb-2 group-hover:animate-bounce">💬</span>
-                    <h2 class="text-xl md:text-2xl font-fantasy text-purple-600">Speaking</h2>
-                    <p class="text-xs md:text-sm text-gray-700 font-bold mt-1">Latihan Bicara</p>
+                <a href="#" class="game-btn bg-white bg-opacity-95 border-b-[8px] border-[#8c5930] rounded-3xl p-6 text-center cursor-pointer block">
+                    <div class="text-4xl mb-3">💬</div>
+                    <h3 class="text-2xl font-bold text-purple-600 mb-1">Speaking</h3>
+                    <p class="text-gray-500 text-sm font-semibold">Latihan Bicara</p>
                 </a>
 
-                <a href="#" class="magic-btn p-4 flex flex-col items-center justify-center text-center group cursor-pointer">
-                    <span class="text-4xl mb-2 group-hover:animate-bounce">🎧</span>
-                    <h2 class="text-xl md:text-2xl font-fantasy text-yellow-600">Listening</h2>
-                    <p class="text-xs md:text-sm text-gray-700 font-bold mt-1">Mendengarkan</p>
+                <a href="#" class="game-btn bg-white bg-opacity-95 border-b-[8px] border-[#8c5930] rounded-3xl p-6 text-center cursor-pointer block">
+                    <div class="text-4xl mb-3">🎧</div>
+                    <h3 class="text-2xl font-bold text-yellow-600 mb-1">Listening</h3>
+                    <p class="text-gray-500 text-sm font-semibold">Mendengarkan</p>
                 </a>
 
-                <a href="#" class="magic-btn p-4 flex flex-col items-center justify-center text-center group cursor-pointer">
-                    <span class="text-4xl mb-2 group-hover:animate-bounce">🔍</span>
-                    <h2 class="text-xl md:text-2xl font-fantasy text-blue-600">Reading</h2>
-                    <p class="text-xs md:text-sm text-gray-700 font-bold mt-1">Membaca Teks</p>
+                <a href="#" class="game-btn bg-white bg-opacity-95 border-b-[8px] border-[#8c5930] rounded-3xl p-6 text-center cursor-pointer block">
+                    <div class="text-4xl mb-3">🔍</div>
+                    <h3 class="text-2xl font-bold text-blue-600 mb-1">Reading</h3>
+                    <p class="text-gray-500 text-sm font-semibold">Membaca Teks</p>
                 </a>
 
-                <a href="#" class="magic-btn p-4 flex flex-col items-center justify-center text-center group cursor-pointer">
-                    <span class="text-4xl mb-2 group-hover:animate-bounce">✍️</span>
-                    <h2 class="text-xl md:text-2xl font-fantasy text-red-600">Writing</h2>
-                    <p class="text-xs md:text-sm text-gray-700 font-bold mt-1">Menulis Cerita</p>
+                <a href="#" class="game-btn bg-white bg-opacity-95 border-b-[8px] border-[#8c5930] rounded-3xl p-6 text-center cursor-pointer block">
+                    <div class="text-4xl mb-3">✍️</div>
+                    <h3 class="text-2xl font-bold text-red-600 mb-1">Writing</h3>
+                    <p class="text-gray-500 text-sm font-semibold">Menulis Cerita</p>
                 </a>
+
             </div>
-
-            <!-- Menu Buku Latihan (Bawah) -->
-            <div class="mt-8 flex flex-col md:flex-row justify-center gap-4 px-2">
-                <a href="#" class="magic-btn bg-pink-50 p-4 px-8 flex items-center justify-center gap-3 cursor-pointer">
-                    <span class="text-3xl">📚</span>
-                    <div>
-                        <h3 class="font-fantasy text-lg text-pink-700">Small Steps, Big Progress</h3>
-                        <p class="text-sm text-gray-700 font-bold">Kumpulan Latihan Soal</p>
-                    </div>
-                </a>
-
-                <a href="#" class="magic-btn bg-blue-50 p-4 px-8 flex items-center justify-center gap-3 cursor-pointer">
-                    <span class="text-3xl">🎮</span>
-                    <div>
-                        <h3 class="font-fantasy text-lg text-blue-700">Practice Makes Magic</h3>
-                        <p class="text-sm text-gray-700 font-bold">Kuis & Game Interaktif</p>
-                    </div>
-                </a>
-            </div>
-
-        </main>
-        
-        <!-- Footer Info -->
-        <footer class="mt-auto pt-10 pb-4 text-center z-10">
-            <div class="bg-black bg-opacity-50 text-white px-6 py-2 rounded-full inline-block backdrop-blur-sm">
-                <p class="text-sm font-bold text-yellow-300">A Brighter You! ❤️ Disusun oleh: Peni Sulistiyanti, S.Pd., M.Pd.</p>
-            </div>
-        </footer>
-
+        </div>
     </div>
-
 </body>
 </html>
