@@ -6,69 +6,30 @@
     <title>Ruang Inggris - Fantasy Learning</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        .game-btn {
-            transition: transform 0.2s, box-shadow 0.2s;
+        /* Efek 3D dan animasi menggemaskan untuk tombol */
+        .cute-btn {
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
-        .game-btn:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        .cute-btn:hover {
+            transform: translateY(-8px) scale(1.03) rotate(1.5deg);
+            box-shadow: 0 15px 25px rgba(0,0,0,0.15);
         }
     </style>
 </head>
 
-<!-- KODE DIREVISI: Memanggil nama file background.jpg.png sesuai dengan yang ada di GitHub -->
-<body class="font-sans text-slate-800 min-h-screen" style="background-image: url('background.jpg.png'); background-size: cover; background-position: center; background-attachment: fixed;">
+<body class="font-sans text-slate-800 min-h-screen" style="background-image: url('background.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
     
-    <div class="min-h-screen bg-black bg-opacity-30 py-10 px-4">
-        <div class="max-w-5xl mx-auto">
+    <!-- Overlay transparan agar tombol tetap terbaca di atas gambar -->
+    <div class="min-h-screen bg-black/30 py-10 px-4 flex flex-col items-center">
+        
+        <div class="w-full max-w-3xl">
             
-            <div class="bg-[#FFF8D6] border-[6px] border-[#B67332] rounded-3xl p-6 text-center shadow-2xl mb-12 relative max-w-2xl mx-auto transform rotate-1 hover:rotate-0 transition">
-                <div class="absolute -top-6 -left-4 text-4xl">✨</div>
-                <div class="absolute -bottom-4 -right-4 text-4xl">🌟</div>
-                <h1 class="text-4xl md:text-6xl font-extrabold text-[#7A4B22] drop-shadow-md mb-2 tracking-wide" style="font-family: 'Comic Sans MS', cursive, sans-serif;">Ruang Inggris</h1>
-                <p class="text-[#966029] font-bold text-lg md:text-xl">Temukan semua materi bahasa Inggris seru di sini!</p>
+            <!-- Header Papan Imut -->
+            <div class="bg-[#fff9e6] border-[6px] border-[#ffb6b9] rounded-[3rem] p-8 text-center shadow-xl mb-12 relative transform rotate-1 hover:-rotate-1 transition-transform duration-300">
+                <div class="absolute -top-6 -left-4 text-5xl animate-bounce">✨</div>
+                <div class="absolute -bottom-4 -right-4 text-5xl">🌸</div>
+                <h1 class="text-4xl md:text-5xl font-extrabold text-[#d9777f] drop-shadow-sm mb-2 tracking-wide" style="font-family: 'Comic Sans MS', cursive, sans-serif;">Ruang Inggris</h1>
+                <p class="text-[#b85b63] font-bold text-lg md:text-xl">Temukan semua materi bahasa Inggris seru di sini!</p>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                
-                <a href="#" class="game-btn bg-white bg-opacity-95 border-b-[8px] border-[#8c5930] rounded-3xl p-6 text-center cursor-pointer block">
-                    <div class="text-4xl mb-3">📖</div>
-                    <h3 class="text-2xl font-bold text-orange-600 mb-1">Grammar</h3>
-                    <p class="text-gray-500 text-sm font-semibold">Tata Bahasa</p>
-                </a>
-
-                <a href="#" class="game-btn bg-white bg-opacity-95 border-b-[8px] border-[#8c5930] rounded-3xl p-6 text-center cursor-pointer block">
-                    <div class="text-4xl mb-3">🌱</div>
-                    <h3 class="text-2xl font-bold text-green-600 mb-1">Vocabulary</h3>
-                    <p class="text-gray-500 text-sm font-semibold">Kosakata Baru</p>
-                </a>
-
-                <a href="#" class="game-btn bg-white bg-opacity-95 border-b-[8px] border-[#8c5930] rounded-3xl p-6 text-center cursor-pointer block">
-                    <div class="text-4xl mb-3">💬</div>
-                    <h3 class="text-2xl font-bold text-purple-600 mb-1">Speaking</h3>
-                    <p class="text-gray-500 text-sm font-semibold">Latihan Bicara</p>
-                </a>
-
-                <a href="#" class="game-btn bg-white bg-opacity-95 border-b-[8px] border-[#8c5930] rounded-3xl p-6 text-center cursor-pointer block">
-                    <div class="text-4xl mb-3">🎧</div>
-                    <h3 class="text-2xl font-bold text-yellow-600 mb-1">Listening</h3>
-                    <p class="text-gray-500 text-sm font-semibold">Mendengarkan</p>
-                </a>
-
-                <a href="#" class="game-btn bg-white bg-opacity-95 border-b-[8px] border-[#8c5930] rounded-3xl p-6 text-center cursor-pointer block">
-                    <div class="text-4xl mb-3">🔍</div>
-                    <h3 class="text-2xl font-bold text-blue-600 mb-1">Reading</h3>
-                    <p class="text-gray-500 text-sm font-semibold">Membaca Teks</p>
-                </a>
-
-                <a href="#" class="game-btn bg-white bg-opacity-95 border-b-[8px] border-[#8c5930] rounded-3xl p-6 text-center cursor-pointer block">
-                    <div class="text-4xl mb-3">✍️</div>
-                    <h3 class="text-2xl font-bold text-red-600 mb-1">Writing</h3>
-                    <p class="text-gray-500 text-sm font-semibold">Menulis Cerita</p>
-                </a>
-
-            </div>
-        </div>
-    </div>
-</body>
-</html>
+            <!-- Grid Menu 2 Kolom (3 Kiri, 3 Kanan) -->
