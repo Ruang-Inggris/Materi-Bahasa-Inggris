@@ -3,30 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Materi Bahasa Inggris SMK</title>
+    <title>Ruang Inggris</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-50 font-sans">
+<body class="bg-slate-50 font-sans text-slate-800">
     
-    <header class="bg-blue-800 text-white p-6 text-center shadow-md">
-        <h1 class="text-3xl font-bold">Modul Bahasa Inggris Kelas X</h1>
-        <p class="mt-2 text-blue-200">Disusun oleh: Peni Sulistiyanti, S.Pd., M.Pd.</p>
+    <!-- Header dengan gradien warna ungu ke merah muda -->
+    <header class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white p-10 text-center shadow-lg rounded-b-3xl mb-8">
+        <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight mb-2">Ruang Inggris</h1>
+        <p class="text-purple-100 font-medium text-lg">Temukan materi Bahasa Inggris seru di sini!</p>
     </header>
 
-    <main class="max-w-4xl mx-auto p-4 mt-6">
-        <h2 class="text-xl font-semibold mb-4 text-gray-800 border-b-2 border-blue-200 pb-2">Pilih Materi Pembelajaran</h2>
+    <main class="max-w-4xl mx-auto p-4">
+        <h2 class="text-2xl font-bold mb-6 text-slate-700 border-b-4 border-purple-200 pb-2 inline-block">Pilih Materi Pembelajaran</h2>
         
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div class="bg-white p-5 rounded-xl shadow-sm border-l-4 border-blue-500 hover:shadow-md transition">
-                <h3 class="text-lg font-bold text-gray-800">Descriptive & Report Text</h3>
-                <p class="text-gray-600 mt-2 text-sm">Modul materi, contoh teks, dan panduan penyusunan kalimat.</p>
-                <a href="#" class="mt-4 inline-block text-blue-600 font-medium hover:text-blue-800">Buka Materi &rarr;</a>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Kartu Materi -->
+            <div class="bg-white p-6 rounded-2xl shadow-sm border-t-4 border-indigo-400 hover:shadow-xl hover:-translate-y-1 transition duration-300">
+                <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold text-slate-800">Descriptive & Report Text</h3>
+                <p class="text-slate-600 mt-2">Modul materi, contoh teks, dan panduan penyusunan kalimat.</p>
+                <a href="#" class="mt-5 inline-flex items-center text-indigo-600 font-semibold hover:text-indigo-800">Buka Materi <span class="ml-1">&rarr;</span></a>
             </div>
 
-            <div class="bg-white p-5 rounded-xl shadow-sm border-l-4 border-green-500 hover:shadow-md transition">
-                <h3 class="text-lg font-bold text-gray-800">Kuis Interaktif & Games</h3>
-                <p class="text-gray-600 mt-2 text-sm">Latihan soal pemahaman bacaan dan game menjodohkan kosa kata.</p>
-                <a href="#" class="mt-4 inline-block text-green-600 font-medium hover:text-green-800">Mulai Kuis &rarr;</a>
+            <!-- Kartu Kuis -->
+            <div class="bg-white p-6 rounded-2xl shadow-sm border-t-4 border-pink-400 hover:shadow-xl hover:-translate-y-1 transition duration-300">
+                <div class="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-pink-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold text-slate-800">Kuis Interaktif & Games</h3>
+                <p class="text-slate-600 mt-2">Latihan soal pemahaman bacaan dan game menjodohkan kosa kata.</p>
+                <a href="#" class="mt-5 inline-flex items-center text-pink-600 font-semibold hover:text-pink-800">Mulai Kuis <span class="ml-1">&rarr;</span></a>
             </div>
         </div>
     </main>
